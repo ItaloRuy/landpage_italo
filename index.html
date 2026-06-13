@@ -390,6 +390,30 @@
         .footer-logo span { color: var(--accent); }
         footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
 
+        /* ── FAQ ── */
+        #faq { background: var(--bg-light); }
+        .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        .faq-question {
+            width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            padding: 20px 24px; background: none; border: none; cursor: pointer;
+            font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--text);
+            text-align: left; transition: color 0.2s;
+        }
+        .faq-question:hover { color: var(--blue); }
+        .faq-icon {
+            flex-shrink: 0; width: 22px; height: 22px; color: var(--blue);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.25s ease;
+            padding: 0 24px;
+        }
+        .faq-answer p { color: var(--text-sub); line-height: 1.7; padding-bottom: 20px; }
+        .faq-item.open .faq-answer { max-height: 200px; padding-top: 0; }
+
         /* ── WhatsApp flutuante ── */
         .wa-float {
             position: fixed; bottom: 28px; right: 28px; z-index: 90;
@@ -733,6 +757,67 @@
             </div>
         </section>
 
+        <section id="faq">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Dúvidas frequentes</span>
+                    <h2 class="section-title">Perguntas frequentes</h2>
+                    <p class="section-desc">Respostas rápidas para as dúvidas mais comuns antes de fechar.</p>
+                </div>
+                <div class="faq-list reveal">
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Quanto tempo leva para ficar pronto?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer"><p>Landing pages ficam prontas em até <strong>10 dias úteis</strong>. Sites institucionais em até <strong>15 dias úteis</strong>. O prazo começa a contar depois que você me envia todas as informações e aprova o briefing.</p></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Preciso ter domínio e hospedagem?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer"><p>Não. A <strong>hospedagem é gratuita</strong> e já está inclusa. O domínio personalizado (ex: seunegocio.com.br) é opcional e custa em torno de R$40/ano — cuido do processo se você quiser.</p></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Como funciona o pagamento?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer"><p><strong>50% na aprovação do briefing</strong> e <strong>50% na entrega</strong> do projeto. Aceito PIX e transferência. O valor combinado não muda no meio do caminho — proposta fechada é proposta fechada.</p></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Posso pedir alterações depois da entrega?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer"><p>Sim. Incluo <strong>15 dias de suporte</strong> após a entrega para ajustes e correções sem custo adicional. Mudanças maiores de escopo são orçadas separadamente.</p></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Atende fora da minha cidade?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer"><p>Sim, <strong>100% online para todo o Brasil</strong>. Todo o processo — briefing, aprovações, entrega — acontece por WhatsApp e e-mail. Nunca precisamos nos encontrar pessoalmente.</p></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Preciso entender de tecnologia?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer"><p>Não. Você só precisa me passar as informações do seu negócio — textos, fotos e o que quer comunicar. <strong>Cuido de toda a parte técnica</strong> e explico cada etapa em linguagem simples.</p></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <section id="contato">
             <div class="container contato-inner">
                 <span class="section-tag">Contato</span>
@@ -813,6 +898,22 @@
             });
         }, { threshold: 0.12 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* ── FAQ accordion ── */
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
 
         /* ── Footer year dinâmico ── */
         document.getElementById('footer-year').textContent = new Date().getFullYear();
