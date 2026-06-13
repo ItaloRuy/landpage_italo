@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ítalo Ruy | Landing Pages e Sites que Convertem</title>
+    <meta name="description" content="Freelancer especializado em landing pages e sites profissionais. Atendimento online para todo o Brasil. Entrega em até 10 dias úteis.">
+    <meta name="author" content="Ítalo Ruy">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://italoruy.com.br/">
+    <meta property="og:title"       content="Ítalo Ruy | Landing Pages e Sites que Convertem">
+    <meta property="og:description" content="Landing pages que transformam visitantes em clientes no WhatsApp. Atendimento online para todo o Brasil.">
+    <meta property="og:image"       content="https://italoruy.com.br/og-image.jpg">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale"      content="pt_BR">
+    <meta property="og:site_name"   content="Ítalo Ruy Freelancer">
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Ítalo Ruy | Landing Pages e Sites que Convertem">
+    <meta name="twitter:description" content="Landing pages que transformam visitantes em clientes no WhatsApp.">
+    <meta name="twitter:image"       content="https://italoruy.com.br/og-image.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230f172a' width='64' height='64' rx='12'/%3E%3Ctext x='32' y='44' font-family='system-ui,sans-serif' font-size='38' font-weight='900' fill='%23f59e0b' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy:       #0f172a;
+            --navy-light: #1e293b;
+            --blue:       #2563eb;
+            --blue-hover: #1d4ed8;
+            --blue-light: #eff6ff;
+            --blue-mid:   #dbeafe;
+            --accent:     #f59e0b;
+            --text:       #1e293b;
+            --text-sub:   #475569;
+            --text-muted: #94a3b8;
+            --border:     #e2e8f0;
+            --white:      #ffffff;
+            --bg-light:   #f8fafc;
+            --green:      #25d366;
+            --radius:     12px;
+            --radius-sm:  8px;
+            --shadow:     0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg:  0 8px 40px rgba(0,0,0,0.12);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--blue); background: var(--blue-light);
+            padding: 5px 14px; border-radius: 99px; margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800;
+            color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+        }
+        .section-desc { font-size: 1rem; color: var(--text-sub); max-width: 560px; line-height: 1.8; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header .section-desc { margin: 0 auto; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: inherit; font-size: 0.92rem; font-weight: 600;
+            padding: 14px 28px; border-radius: var(--radius-sm);
+            border: none; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+        }
+        .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+        .btn-wa { background: var(--green); color: var(--white); }
+        .btn-wa:hover { background: #1ebe5d; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+
+        /* ── Navbar ── */
+        #navbar {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: 100; padding: 18px 0; transition: all 0.3s ease;
+        }
+        #navbar.scrolled {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 var(--border); padding: 12px 0;
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--white); transition: color 0.3s; }
+        #navbar.scrolled .nav-logo { color: var(--navy); }
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.8); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--white); }
+        #navbar.scrolled .nav-links a { color: var(--text-sub); }
+        #navbar.scrolled .nav-links a:hover { color: var(--blue); }
+        .nav-cta {
+            font-size: 0.82rem !important; font-weight: 600 !important;
+            color: var(--white) !important; background: var(--blue);
+            padding: 9px 20px; border-radius: var(--radius-sm);
+            transition: background 0.2s, transform 0.2s !important;
+        }
+        .nav-cta:hover { background: var(--blue-hover) !important; transform: translateY(-1px); }
+        #navbar.scrolled .nav-cta { color: var(--white) !important; }
+
+        .menu-toggle {
+            display: none; background: none; border: none; cursor: pointer;
+            padding: 4px; flex-direction: column; gap: 5px;
+        }
+        .menu-toggle span {
+            display: block; width: 24px; height: 2px;
+            background: var(--white); border-radius: 2px; transition: all 0.3s;
+        }
+        #navbar.scrolled .menu-toggle span { background: var(--navy); }
+        .menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-toggle.open span:nth-child(2) { opacity: 0; }
+        .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Hero ── */
+        #hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f5e 50%, #0f2649 100%);
+            display: flex; align-items: center;
+            position: relative; overflow: hidden; padding: 120px 0 80px;
+        }
+        #hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 50%, rgba(37,99,235,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(245,158,11,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        #hero::after {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px; pointer-events: none;
+        }
+        .hero-inner { position: relative; z-index: 1; max-width: 720px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.78rem; font-weight: 600; color: var(--accent);
+            background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25);
+            padding: 6px 16px; border-radius: 99px; margin-bottom: 28px;
+        }
+        .hero-badge::before {
+            content: ''; width: 7px; height: 7px; border-radius: 50%;
+            background: var(--accent); flex-shrink: 0;
+            animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800;
+            color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em;
+        }
+        .hero-title .highlight { color: var(--accent); }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255,255,255,0.75);
+            line-height: 1.8; margin-bottom: 44px; max-width: 580px;
+        }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-stats {
+            display: flex; gap: 44px; margin-top: 64px;
+            padding-top: 44px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: 4px; }
+        .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--white); line-height: 1; }
+        .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); font-weight: 500; }
+
+        /* ── Serviços ── */
+        #servicos { padding: 100px 0; background: var(--bg-light); }
+
+        /* 6 colunas virtuais: cada card ocupa 2, centralizando o par da 2ª linha */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+        .servicos-grid > .servico-card { grid-column: span 2; }
+        .servicos-grid > .servico-card:nth-child(4) { grid-column: 2 / 4; }
+        .servicos-grid > .servico-card:nth-child(5) { grid-column: 4 / 6; }
+
+        .servico-card {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--radius); padding: 32px 28px; position: relative;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+        }
+        .servico-card:not(.breve-card):hover {
+            border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-4px);
+        }
+        .servico-card.destaque {
+            border-color: var(--blue);
+            background: linear-gradient(135deg, #f0f6ff 0%, var(--white) 100%);
+        }
+        .card-badge {
+            position: absolute; top: -13px; left: 24px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            background: var(--accent); color: var(--navy); padding: 4px 12px; border-radius: 99px;
+        }
+        .card-badge-breve {
+            position: absolute; top: -13px; left: 24px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            background: var(--text-muted); color: var(--white); padding: 4px 12px; border-radius: 99px;
+        }
+        .card-icon {
+            width: 48px; height: 48px; border-radius: 12px; background: var(--blue-light);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+        }
+        .card-icon svg { width: 24px; height: 24px; color: var(--blue); }
+        .servico-card.destaque .card-icon { background: var(--blue); }
+        .servico-card.destaque .card-icon svg { color: var(--white); }
+        .card-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+        .card-desc { font-size: 0.88rem; color: var(--text-sub); line-height: 1.75; margin-bottom: 20px; }
+        .card-tag {
+            display: inline-block; font-size: 0.7rem; font-weight: 600;
+            color: var(--blue); background: var(--blue-light); padding: 4px 10px; border-radius: 99px;
+        }
+        .card-tag.mensal { color: #059669; background: #ecfdf5; }
+        .card-tag.breve  { color: var(--text-muted); background: var(--bg-light); }
+        .servico-card.breve-card { opacity: 0.6; pointer-events: none; cursor: default; }
+
+        /* ── Como Funciona ── */
+        #como-funciona { padding: 100px 0; background: var(--white); }
+        .passos-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 0; position: relative;
+        }
+        .passos-grid::before {
+            content: ''; position: absolute;
+            top: calc(56px / 2); /* metade exata do círculo */
+            left: calc(100% / 8);
+            right: calc(100% / 8);
+            height: 2px;
+            background: linear-gradient(to right, var(--blue-mid), var(--blue));
+            z-index: 0;
+        }
+        .passo {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; padding: 0 16px; position: relative; z-index: 1;
+        }
+        .passo-num {
+            width: 56px; height: 56px; border-radius: 50%; background: var(--blue);
+            color: var(--white); font-size: 1.1rem; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .passo:hover .passo-num { background: var(--blue-hover); transform: scale(1.08); }
+        .passo-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .passo-desc { font-size: 0.82rem; color: var(--text-sub); line-height: 1.7; }
+        .passo-destaque {
+            font-size: 0.72rem; font-weight: 700; color: var(--blue);
+            background: var(--blue-light); padding: 4px 10px; border-radius: 99px;
+            margin-top: 10px; display: inline-block;
+        }
+
+        /* ── Portfólio ── */
+        #portfolio { padding: 100px 0; background: var(--bg-light); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .portfolio-card {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--radius); overflow: hidden;
+            transition: box-shadow 0.25s, transform 0.25s;
+        }
+        .portfolio-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+        .portfolio-thumb {
+            height: 180px;
+            background: linear-gradient(135deg, var(--blue-mid) 0%, var(--blue-light) 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .portfolio-placeholder {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 10px; color: var(--blue); opacity: 0.45;
+        }
+        .portfolio-placeholder svg { width: 36px; height: 36px; }
+        .portfolio-placeholder span { font-size: 0.78rem; font-weight: 600; }
+        .portfolio-thumb img {
+            width: 100%; height: 100%; object-fit: cover;
+            display: block; filter: brightness(0.92) saturate(0.95);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .portfolio-card:hover .portfolio-thumb img {
+            transform: scale(1.04);
+            filter: brightness(1) saturate(1);
+        }
+        .portfolio-thumb.has-img { background: #0f172a; overflow: hidden; }
+        .portfolio-info { padding: 20px 22px; }
+        .portfolio-tag { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 6px; }
+        .portfolio-name { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .portfolio-desc { font-size: 0.82rem; color: var(--text-sub); }
+
+        /* ── Diferenciais ── */
+        #diferenciais { padding: 100px 0; background: var(--navy); }
+        #diferenciais .section-title { color: var(--white); }
+        #diferenciais .section-desc { color: rgba(255,255,255,0.6); }
+        #diferenciais .section-tag { color: var(--accent); background: rgba(245,158,11,0.12); }
+        .diferenciais-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        }
+        .diferencial-card {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius); padding: 32px 28px;
+            display: flex; gap: 20px; align-items: flex-start;
+            transition: border-color 0.25s, background 0.25s;
+        }
+        .diferencial-card:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.07); }
+        .diferencial-icon {
+            width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+            background: rgba(37,99,235,0.25); display: flex; align-items: center; justify-content: center;
+        }
+        .diferencial-icon svg { width: 24px; height: 24px; color: #93c5fd; }
+        .diferencial-body { display: flex; flex-direction: column; gap: 8px; }
+        .diferencial-title { font-size: 1rem; font-weight: 700; color: var(--white); }
+        .diferencial-desc { font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.75; }
+
+        /* ── Contato ── */
+        #contato {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+            text-align: center; position: relative; overflow: hidden;
+        }
+        #contato::before {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 50px 50px; pointer-events: none;
+        }
+        .contato-inner { position: relative; z-index: 1; }
+        #contato .section-tag { color: var(--accent); background: rgba(245,158,11,0.15); }
+        #contato .section-title { color: var(--white); }
+        #contato .section-desc { color: rgba(255,255,255,0.75); margin: 0 auto 40px; }
+        .contato-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+        .btn-wa-lg { background: var(--green); color: var(--white); font-size: 1rem; padding: 16px 36px; }
+        .btn-wa-lg:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.4); }
+        .btn-email { background: rgba(255,255,255,0.15); color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); font-size: 1rem; padding: 16px 36px; }
+        .btn-email:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+        .contato-info { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+        .contato-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255,255,255,0.65); }
+        .contato-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* ── Footer ── */
+        footer { background: var(--navy); padding: 32px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        .footer-logo { font-size: 1rem; font-weight: 800; color: var(--white); }
+        .footer-logo span { color: var(--accent); }
+        footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+        /* ── WhatsApp flutuante ── */
+        .wa-float {
+            position: fixed; bottom: 28px; right: 28px; z-index: 90;
+            width: 58px; height: 58px; background: var(--green); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 36px rgba(37,211,102,0.6); }
+        .wa-float svg { width: 28px; height: 28px; fill: var(--white); }
+        .wa-float::before {
+            content: ''; position: absolute; inset: -6px; border-radius: 50%;
+            border: 2px solid rgba(37,211,102,0.35);
+            animation: waPulse 2.5s ease-out infinite;
+        }
+        @keyframes waPulse { 0% { transform:scale(1); opacity:0.8; } 100% { transform:scale(1.6); opacity:0; } }
+
+        /* ── Reveal ── */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 960px) {
+            /* Serviços: 2 colunas, último card (5º) centralizado */
+            .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+            .servicos-grid > .servico-card { grid-column: span 1; }
+            .servicos-grid > .servico-card:nth-child(4) { grid-column: span 1; }
+            .servicos-grid > .servico-card:nth-child(5) {
+                grid-column: 1 / -1;
+                max-width: calc(50% - 10px);
+                margin: 0 auto;
+            }
+            .passos-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .passos-grid::before { display: none; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .diferenciais-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none; flex-direction: column; position: absolute;
+                top: 100%; left: 0; right: 0; background: var(--white);
+                padding: 24px; gap: 20px; box-shadow: var(--shadow); z-index: 99;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { color: var(--text-sub) !important; font-size: 1rem; }
+            .nav-links a:hover { color: var(--blue) !important; }
+            .nav-cta { color: var(--white) !important; }
+            .menu-toggle { display: flex; }
+
+            .hero-stats { gap: 20px; }
+            .hero-actions { flex-direction: column; }
+            .hero-actions .btn { width: 100%; justify-content: center; }
+
+            .servicos-grid { grid-template-columns: 1fr; }
+            .servicos-grid > .servico-card:nth-child(5) { max-width: 100%; }
+
+            .passos-grid { grid-template-columns: 1fr; gap: 0; }
+            /* Conectores verticais entre os passos em mobile */
+            .passo { padding: 0 16px 32px; }
+            .passo:not(:last-child)::after {
+                content: ''; display: block;
+                width: 2px; height: 28px;
+                background: linear-gradient(to bottom, var(--blue), var(--blue-mid));
+                margin: 0 auto; position: relative; bottom: 0;
+            }
+            .passo:last-child { padding-bottom: 0; }
+
+            .portfolio-grid { grid-template-columns: 1fr; }
+
+            .contato-actions { flex-direction: column; align-items: center; }
+            .contato-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+            .footer-inner { flex-direction: column; text-align: center; }
+
+            /* Hero stats em grid quando tela muito pequena */
+            @media (max-width: 400px) {
+                .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center; }
+                .stat-number { font-size: 1.4rem; }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" aria-label="Navegação principal">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="nav-logo">Ítalo<span>.</span>dev</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato" class="nav-cta">Orçamento grátis</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle"
+                        aria-label="Abrir menu"
+                        aria-expanded="false"
+                        aria-controls="navLinks">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section id="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-badge">Disponível para novos projetos</div>
+                    <h1 class="hero-title">
+                        Landing pages que transformam visitantes em
+                        <span class="highlight">clientes no WhatsApp</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Crio sites e landing pages profissionais para negócios que querem vender mais.
+                        Atendimento online para todo o Brasil, entrega em até 10 dias úteis.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://wa.me/5543991419899?text=Olá%2C%20Ítalo!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20orçamento."
+                           target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Pedir orçamento grátis
+                        </a>
+                        <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">dias úteis de entrega</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">online, todo o Brasil</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Grátis</span>
+                            <span class="stat-label">orçamento e briefing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Serviços</span>
+                    <h2 class="section-title">O que posso fazer por você</h2>
+                    <p class="section-desc">Soluções digitais focadas em resultado — mais contatos, mais clientes, mais vendas.</p>
+                </div>
+                <div class="servicos-grid">
+
+                    <div class="servico-card destaque reveal">
+                        <span class="card-badge">Mais contratado</span>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                        </div>
+                        <h3 class="card-title">Landing Page</h3>
+                        <p class="card-desc">Página de alta conversão focada em um único objetivo: transformar visitas em mensagens no WhatsApp ou leads qualificados.</p>
+                        <span class="card-tag">Entrega em 10 dias úteis</span>
+                    </div>
+
+                    <div class="servico-card reveal">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253"/></svg>
+                        </div>
+                        <h3 class="card-title">Site Institucional</h3>
+                        <p class="card-desc">Presença online completa para sua empresa. Apresente serviços, equipe e diferenciais com design profissional e responsivo.</p>
+                        <span class="card-tag">Entrega em 10 dias úteis</span>
+                    </div>
+
+                    <div class="servico-card reveal">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        </div>
+                        <h3 class="card-title">SEO Local + Google Meu Negócio</h3>
+                        <p class="card-desc">Apareça nas buscas do Google quando alguém procurar pelo seu serviço na sua cidade. Mais visibilidade, mais clientes locais.</p>
+                        <span class="card-tag mensal">Plano mensal</span>
+                    </div>
+
+                    <div class="servico-card reveal">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+                        </div>
+                        <h3 class="card-title">Manutenção de Sites</h3>
+                        <p class="card-desc">Atualizações, correções, backups e monitoramento do seu site. Foco total no seu negócio — cuido da parte técnica por você.</p>
+                        <span class="card-tag mensal">Plano mensal</span>
+                    </div>
+
+                    <div class="servico-card breve-card reveal" aria-hidden="true">
+                        <span class="card-badge-breve">Em breve</span>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+                        </div>
+                        <h3 class="card-title">Gestão de Tráfego</h3>
+                        <p class="card-desc">Anúncios no Google e Meta Ads para levar o público certo até a sua landing page. Em desenvolvimento — em breve disponível.</p>
+                        <span class="card-tag breve">Em breve</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Como funciona</span>
+                    <h2 class="section-title">Do briefing à entrega em 4 passos</h2>
+                    <p class="section-desc">Um processo simples, claro e sem surpresas. Você acompanha tudo pelo WhatsApp.</p>
+                </div>
+                <div class="passos-grid">
+                    <div class="passo reveal">
+                        <div class="passo-num">1</div>
+                        <h3 class="passo-title">Briefing</h3>
+                        <p class="passo-desc">Você me conta tudo sobre o seu negócio, público-alvo e objetivos. Uma conversa rápida pelo WhatsApp já basta.</p>
+                    </div>
+                    <div class="passo reveal">
+                        <div class="passo-num">2</div>
+                        <h3 class="passo-title">Proposta</h3>
+                        <p class="passo-desc">Envio uma proposta com escopo, prazo e valor. Sem letras miúdas — tudo claro antes de qualquer compromisso.</p>
+                    </div>
+                    <div class="passo reveal">
+                        <div class="passo-num">3</div>
+                        <h3 class="passo-title">Criação</h3>
+                        <p class="passo-desc">Desenvolvo o projeto com atualizações pelo caminho. Você aprova o design antes de irmos para o código final.</p>
+                    </div>
+                    <div class="passo reveal">
+                        <div class="passo-num">4</div>
+                        <h3 class="passo-title">Entrega</h3>
+                        <p class="passo-desc">Site publicado, testado em todos os dispositivos e pronto para receber visitas.</p>
+                        <span class="passo-destaque">Até 10 dias úteis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Portfólio</span>
+                    <h2 class="section-title">Projetos recentes</h2>
+                    <p class="section-desc">Cada projeto é único — construído do zero para o negócio do cliente.</p>
+                </div>
+                <div class="portfolio-grid">
+
+                    <div class="portfolio-card reveal">
+                        <div class="portfolio-thumb has-img">
+                            <img src="https://thuessence.netlify.app/fotos_produtos/Lattafa/Fakhar%20Lattafa%20Black/Lattafa%20Fakhar%20Lattafa%20Black%20-%201.jpeg"
+                                 alt="Thuessence — loja de perfumes árabes originais"
+                                 loading="lazy">
+                        </div>
+                        <div class="portfolio-info">
+                            <p class="portfolio-tag">E-commerce · Landing Page</p>
+                            <h3 class="portfolio-name">Thuessence</h3>
+                            <p class="portfolio-desc">Loja online de perfumes e cosméticos árabes originais. Firebase, filtros por categoria, SEO e integração com WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card reveal">
+                        <div class="portfolio-thumb">
+                            <div class="portfolio-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                                <span>Em breve</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <p class="portfolio-tag">Site Institucional</p>
+                            <h3 class="portfolio-name">Projeto 2</h3>
+                            <p class="portfolio-desc">Portfólio sendo construído. Novos projetos em breve.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card reveal">
+                        <div class="portfolio-thumb">
+                            <div class="portfolio-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                                <span>Em breve</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <p class="portfolio-tag">SEO Local</p>
+                            <h3 class="portfolio-name">Projeto 3</h3>
+                            <p class="portfolio-desc">Portfólio sendo construído. Novos projetos em breve.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="diferenciais">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Por que me contratar</span>
+                    <h2 class="section-title">Mais do que um site — um parceiro no seu crescimento</h2>
+                    <p class="section-desc">Trabalho com transparência, prazos reais e resultados mensuráveis.</p>
+                </div>
+                <div class="diferenciais-grid">
+
+                    <div class="diferencial-card reveal">
+                        <div class="diferencial-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div class="diferencial-body">
+                            <h3 class="diferencial-title">Entrega no prazo, sempre</h3>
+                            <p class="diferencial-desc">Comprometo com datas reais. Se eu disse 10 dias úteis, são 10 dias úteis — sem empurrar para "semana que vem".</p>
+                        </div>
+                    </div>
+
+                    <div class="diferencial-card reveal">
+                        <div class="diferencial-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+                        </div>
+                        <div class="diferencial-body">
+                            <h3 class="diferencial-title">Sem tecnicês desnecessário</h3>
+                            <p class="diferencial-desc">Você não precisa entender de código para trabalhar comigo. Explico tudo em linguagem clara e acompanho você em cada etapa.</p>
+                        </div>
+                    </div>
+
+                    <div class="diferencial-card reveal">
+                        <div class="diferencial-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 10.5c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.25-8.25-3.286z"/></svg>
+                        </div>
+                        <div class="diferencial-body">
+                            <h3 class="diferencial-title">Suporte após a entrega</h3>
+                            <p class="diferencial-desc">Entregou não é abandonou. Tenho um período de suporte incluso para ajustes e dúvidas depois que o site for ao ar.</p>
+                        </div>
+                    </div>
+
+                    <div class="diferencial-card reveal">
+                        <div class="diferencial-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75"/></svg>
+                        </div>
+                        <div class="diferencial-body">
+                            <h3 class="diferencial-title">Preço justo e transparente</h3>
+                            <p class="diferencial-desc">Sem cobrar por reunião, sem taxa de revisão escondida. Você recebe uma proposta fechada e o valor não muda no meio do caminho.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container contato-inner">
+                <span class="section-tag">Contato</span>
+                <h2 class="section-title">Pronto para começar?</h2>
+                <p class="section-desc">Me conta o seu projeto pelo WhatsApp. Respondo rápido e o orçamento é gratuito.</p>
+                <div class="contato-actions">
+                    <a href="https://wa.me/5543991419899?text=Olá%2C%20Ítalo!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20orçamento."
+                       target="_blank" rel="noopener noreferrer" class="btn btn-wa-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Falar no WhatsApp
+                    </a>
+                    <a href="mailto:italoruy1@gmail.com" class="btn btn-email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                        italoruy1@gmail.com
+                    </a>
+                </div>
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253"/></svg>
+                        Atendimento online · Todo o Brasil
+                    </div>
+                    <div class="contato-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Resposta em até 24h
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo">Ítalo<span>.</span>dev</span>
+                <p>© <span id="footer-year"></span> Ítalo Ruy. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5543991419899?text=Olá%2C%20Ítalo!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20um%20orçamento."
+       class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        /* ── Navbar scroll ── */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        /* ── Menu mobile com aria ── */
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks   = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            menuToggle.classList.toggle('open', open);
+            menuToggle.setAttribute('aria-expanded', open);
+            menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        });
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuToggle.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
+            });
+        });
+
+        /* ── Scroll reveal ── */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 80);
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* ── Footer year dinâmico ── */
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
